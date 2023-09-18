@@ -1,0 +1,578 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olaf</title>
+    <style>
+        .container{
+            position: relative;
+            margin: 70px auto;
+            width: 500px;
+            height: 500px;
+            background-color: lightskyblue;
+            background-image: url(img/bgsnow.webp);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .tkepala{
+            position: absolute;
+            top: 240px;
+            left: 200px;
+            width: 5px;
+            height: 5px;
+            background-color: black;
+            border-radius: 50%;
+        }
+        .container:hover .tkepala{
+            transition: 2s;
+            left: 175px;
+            top: 255px;
+            transform: rotate(-45deg);
+        }
+        .kepala{
+            z-index: 2;
+            position: absolute;
+            top: -100px;
+            width: 70px;
+            height: 130px;
+            background-color: snow;
+            transform: rotate(20deg);
+            border-top-left-radius: 45%;
+            border-top-right-radius: 45%;
+            border-bottom-left-radius: 55%;
+            border-bottom-right-radius: 55%;
+            box-shadow: inset 2px 0px 2px 2px rgba(0, 0, 0, 0.2);
+        }
+        .rambut1{
+            position: absolute;
+            top: -29px;
+            left: 30px;
+            transform: rotate(-3deg);
+            width: 2px;
+            height: 30px;
+            background-color: #361500;
+        }
+        .ranting1{
+            position: absolute;
+            top: -17px;
+            left: -2px;
+            transform: rotate(-15deg);
+            width: 2px;
+            height: 20px;
+            background-color: #361500;
+        }
+        .ranting2{
+            position: absolute;
+            top: -13px;
+            left: -9px;
+            transform: rotate(-50deg);
+            width: 2px;
+            height: 20px;
+            background-color: #361500;
+        }
+        .ranting3{
+            position: absolute;
+            top: -30px;
+            left: -5px;
+            transform: rotate(-18deg);
+            width: 2px;
+            height: 33px;
+            background-color: #361500;
+        }
+        .ranting4{
+            position: absolute;
+            top: -45px;
+            left: -17px;
+            transform: rotate(-50deg);
+            width: 2px;
+            height: 20px;
+            background-color: #361500;
+        }
+        .ranting5{
+            position: absolute;
+            top: -30px;
+            left: 4px;
+            transform: rotate(13deg);
+            width: 2px;
+            height: 33px;
+            background-color: #361500;
+        }
+        .ranting6{
+            position: absolute;
+            top: -25px;
+            left: 2px;
+            transform: rotate(-50deg);
+            width: 2px;
+            height: 5px;
+            background-color: #361500;
+        }
+        .ranting7{
+            position: absolute;
+            top: -35px;
+            left: 11px;
+            transform: rotate(105deg);
+            width: 2px;
+            height: 10px;
+            background-color: #361500;
+        }
+        .rambut2{
+            position: absolute;
+            top: -34px;
+            left: 36px;
+            transform: rotate(3deg);
+            width: 2px;
+            height: 35px;
+            background-color: #361500;
+        }
+        .rambut3{
+            position: absolute;
+            top: -24px;
+            left: 43px;
+            transform: rotate(14deg);
+            width: 2px;
+            height: 25px;
+            background-color: #361500;
+        }
+        .aliskiri{
+            position: absolute;
+            transform: rotate(-9deg);
+            top: 7px;
+            left: 18px;
+            width: 15px;
+            height: 3px;
+            background-color: #361500;
+            border-bottom-right-radius: 50%;
+        }
+        .aliskanan{
+            position: absolute;
+            transform: rotate(10deg);
+            top: 7px;
+            left: 38px;
+            width: 15px;
+            height: 3px;
+            background-color: #361500;
+            border-bottom-right-radius: 50%;
+        }
+        .aliskiri1{
+            position: absolute;
+            transform: rotate(-45deg);
+            top: 11px;
+            left: 11px;
+            width: 11px;
+            height: 3px;
+            background-color: #361500;
+            border-bottom-right-radius: 90%;
+            border-bottom-left-radius: 90%;
+        }
+        .aliskanan1{
+            position: absolute;
+            transform: rotate(65deg);
+            top: 12px;
+            left: 49px;
+            width: 11px;
+            height: 3px;
+            background-color: #361500;
+            border-bottom-right-radius: 90%;
+            border-bottom-left-radius: 90%;
+        }
+        .matakiri{
+            position: absolute;
+            top: 20px;
+            left: 12px;
+            width: 23px;
+            height: 23px;
+            background-color: snow;
+            border-radius: 50%;
+            box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.7);
+        }
+        .matakanan{
+            position: absolute;
+            top: 20px;
+            left: 35px;
+            width: 23px;
+            height: 23px;
+            background-color: snow;
+            border-radius: 50%;
+            box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.7);
+        }
+        .bolamata{
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border-radius: 50%;
+        }
+        .hidung{
+            z-index: 3;
+            position: absolute;
+            top: 34px;
+            right: 20px;
+            border-radius: 50%;
+            width: 23px;
+            height: 23px;
+            background-image: linear-gradient(to bottom right, #E25E3E 70%, yellow);
+            box-shadow: inset 4px 1px 5px 2px rgba(0, 0, 0, 0.3);
+        }
+        .bbratas{
+            position: absolute;
+            transform: rotate(0deg);
+            top: -22px;
+            left: -20px;
+            z-index: 2;
+            width: 71px;
+            height: 25px;
+            background-color: snow;
+            box-shadow: inset 1px -3px 3px 3px rgba(0, 0, 0, 0.2);
+            border-top-left-radius: 30%;
+            border-top-right-radius: 30%;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+        }
+        .gigi{
+            transform: rotate(3deg);
+            position: absolute;
+            z-index: 1;
+            top: 65px;
+            left: 19px;
+            width: 33px;
+            height: 15px;
+            background-color: snow;
+            border-bottom-left-radius: 40%;
+            border-bottom-right-radius: 40%;
+            box-shadow: inset 3px -3px 4px 3px rgba(0, 0, 0, 0.2);
+        }
+        .symkiri{
+            position: absolute;
+            top: 50px;
+            width: 35px;
+            height: 70px;
+            background-color: #536162;
+            border-bottom-left-radius: 100%;
+            border-bottom-right-radius: 0%;
+            box-shadow: inset 6px 3px 5px rgba(0, 0, 0, 0.4);
+        }
+        .symkanan{
+            position: absolute;
+            top: 50px;
+            right: 1px;
+            width: 35px;
+            height: 70px;
+            background-color: #536162;
+            border-bottom-left-radius: 0%;
+            border-bottom-right-radius: 100%;
+        }
+        .thidung{
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            width: 5px;
+            height: 5px;
+            background-color: snow;
+            border-radius: 50%;
+            box-shadow: -2px -1px 2px 2px rgba(0, 0, 0, 0.2),-4px -1px 3px 3px rgba(0, 0, 0, 0.3);
+        }
+        .mukakiri{
+            position: absolute;
+            top: 30px;
+            left: -5px;
+            width: 30px;
+            height: 100px;
+            background-color: snow;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 30%;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 30%;
+            transform: rotate(-18deg);
+            box-shadow: inset 10px 2px 8px 1px rgba(0, 0, 0, 0.2);
+        }
+        .mukakanan{
+            position: absolute;
+            top: 30px;
+            left: 43px;
+            width: 30px;
+            height: 100px;
+            background-color: snow;
+            border-top-left-radius: 30%;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 30%;
+            border-bottom-right-radius: 50%;
+            transform: rotate(20deg);
+            box-shadow: inset -5px 1px 5px 2px rgba(0, 0, 0, 0.1);
+        }
+        .badan1{
+            position: absolute;
+            top: 260px;
+            left: 170px;
+            transform: rotate(-25deg);
+            z-index: 1;
+            width: 75px;
+            height: 50px;
+            background-color: snow;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 40%;
+            border-bottom-right-radius: 40%;
+            box-shadow: inset 10px -7px 5px 5px rgba(0, 0, 0, 0.2) ;
+        }
+        .ttangankiri{
+            position: absolute;
+            left: 20px;
+            width: 4px;
+            height: 4px;
+            border: 1px solid black;
+            border-radius: 50%;
+            transform: rotate(165deg);
+        }
+        .container:hover .ttangankiri{
+            transition: 1.5s;
+            transform: rotate(140deg);
+            top: 3px;
+            left: 13px;
+        }
+        .tkiri{
+            position: absolute;
+            width: 0;
+            height: 70px;
+            border: 3px solid #361500;
+            background-color: #361500;
+        }
+        .kirijr1{
+            position: absolute;
+            transform: rotate(55deg);
+            top: 55px;
+            right: 2px;
+            width: 5px;
+            height: 13px;
+            background-color: #361500;
+        }
+        .kirijr2{
+            position: absolute;
+            transform: rotate(52deg);
+            top: 67px;
+            right: 4px;
+            width: 5px;
+            height: 20px;
+            background-color: #361500;
+        }
+        .kirijr3{
+            position: absolute;
+            transform: rotate(23deg);
+            top: 72px;
+            right: 1px;
+            width: 5px;
+            height: 20px;
+            background-color: #361500;
+        }
+        .kirijr4{
+            position: absolute;
+            transform: rotate(-11deg);
+            top: 62px;
+            right: -7px;
+            width: 5px;
+            height: 28px;
+            background-color: #361500;
+        }
+        .kananjr1{
+            position: absolute;
+            transform: rotate(105deg);
+            top: 60px;
+            right: -10px;
+            width: 5px;
+            height: 13px;
+            background-color: #361500;
+        }
+        .kananjr2{
+            position: absolute;
+            transform: rotate(52deg);
+            top: 67px;
+            right: 4px;
+            width: 5px;
+            height: 20px;
+            background-color: #361500;
+        }
+        .kananjr3{
+            position: absolute;
+            transform: rotate(23deg);
+            top: 72px;
+            right: 1px;
+            width: 5px;
+            height: 20px;
+            background-color: #361500;
+        }
+        .kananjr4{
+            position: absolute;
+            transform: rotate(-11deg);
+            top: 62px;
+            right: -7px;
+            width: 5px;
+            height: 28px;
+            background-color: #361500;
+        }
+        .ttangankanan{
+            position: absolute;
+            top: 20px;
+            left: 73px;
+            width: 4px;
+            height: 4px;
+            border: 1px solid black;
+            border-radius: 50%;
+            transform: rotate(-90deg);
+        }
+        .tkanan{
+            position: absolute;
+            width: 0;
+            height: 70px;
+            border: 3px solid #361500;
+            background-color: #361500;
+        }
+        .satu{
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-top-left-radius: 30%;
+            border-top-right-radius: 45%;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 45%;
+        }
+        .badan2{
+            position: absolute;
+            z-index: 0;
+            top: 40px;
+            left: -25px;
+            transform: rotate(-5deg);
+            width: 130px;
+            height: 90px;
+            background-color: snow;
+            border-top-left-radius: 40%;
+            border-top-right-radius: 45%;
+            border-bottom-left-radius: 40%;
+            border-bottom-right-radius: 40%;
+            box-shadow: inset 7px -3px 10px 9px rgba(0, 0, 0, 0.2);
+        }
+        .dua{
+            position: absolute;
+            transform: rotate(25deg);
+            top: 20px;
+            left: 56px;
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-top-left-radius: 30%;
+            border-top-right-radius: 45%;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 45%;
+        }
+        .tiga{
+            transform: rotate(-20deg);
+            position: absolute;
+            top: 54px;
+            right: 43px;
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-top-left-radius: 30%;
+            border-top-right-radius: 45%;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 45%;
+        }
+        .kkiri{
+            position: absolute;
+            bottom: 65px;
+            left: 180px;
+            width: 50px;
+            height: 50px;
+            background-color: snow;
+            border-top-left-radius: 90%;
+            border-top-right-radius: 70%;
+            border-bottom-left-radius: 30%;
+            border-bottom-right-radius: 40%;
+            box-shadow: inset 10px -1px 9px 0px rgba(0, 0, 0, 0.2);
+        }
+        .kkanan{
+            position: absolute;
+            transform: rotate(-65deg);
+            bottom: 125px;
+            left: 287px;
+            width: 50px;
+            height: 50px;
+            background-color: snow;
+            border-top-left-radius: 60%;
+            border-top-right-radius: 90%;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 30%;
+            box-shadow: inset 10px -1px 9px 0px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tkepala">
+            <div class="kepala">
+                <div class="aliskiri"></div>
+                <div class="aliskanan"></div>
+                <div class="aliskiri1"></div>
+                <div class="aliskanan1"></div>
+                <div class="matakiri">
+                    <div class="bolamata"></div>
+                </div>
+                <div class="matakanan">
+                    <div class="bolamata"></div>
+                </div>
+                <div class="mukakiri"></div>
+                <div class="mukakanan"></div>
+                <div class="hidung">
+                    <div class="thidung"></div>
+                </div>
+                <div class="gigi">
+                    <div class="bbratas"></div>
+                </div>
+                <div class="symkiri"></div>
+                <div class="symkanan"></div>
+                <div class="rambut1">
+                    <div class="ranting1"></div>
+                    <div class="ranting2"></div>
+                </div>
+                <div class="rambut2">
+                    <div class="ranting3"></div>
+                    <div class="ranting4"></div>
+                </div>
+                <div class="rambut3">
+                    <div class="ranting5"></div>
+                    <div class="ranting6"></div>
+                    <div class="ranting7"></div>
+                </div>
+            </div>
+        </div>
+        <div class="badan1">
+            <div class="ttangankiri">
+                <div class="tkiri">
+                    <div class="kirijr1"></div>
+                    <div class="kirijr2"></div>
+                    <div class="kirijr3"></div>
+                    <div class="kirijr4"></div>
+                </div>
+            </div>
+            <div class="satu"></div>
+            <div class="ttangankanan">
+                <div class="tkanan">
+                    <div class="kananjr1"></div>
+                    <div class="kananjr2"></div>
+                    <div class="kananjr3"></div>
+                    <div class="kananjr4"></div>
+                </div>
+            </div>
+            <div class="badan2">
+                <div class="dua"></div>
+                <div class="tiga"></div>
+            </div>
+        </div>
+        <div class="kkiri"></div>
+        <div class="kkanan"></div>
+    </div>
+</body>
+</html>
